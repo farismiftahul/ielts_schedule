@@ -536,6 +536,21 @@ function calculateCountdown() {
     }
 }
 
+// Get matching emoji for visual study focus
+function getSkillEmoji(focusTitle) {
+    const title = focusTitle.toLowerCase();
+    if (title.includes("listening")) return "🎧";
+    if (title.includes("reading")) return "📖";
+    if (title.includes("writing task 1") || title.includes("data & trends")) return "📊";
+    if (title.includes("writing task 2") || title.includes("essays")) return "✍️";
+    if (title.includes("speaking")) return "🗣️";
+    if (title.includes("weakness") || title.includes("vocab") || title.includes("grammar")) return "🔧";
+    if (title.includes("endurance") || title.includes("mock")) return "🏆";
+    if (title.includes("review") || title.includes("reset") || title.includes("rest")) return "☕";
+    if (title.includes("exam day")) return "🎯";
+    return "📅";
+}
+
 // Determine which day is today relative to the 2026 timeline
 function determineToday() {
     const today = new Date();
@@ -553,7 +568,7 @@ function determineToday() {
     // Update active UI title labels
     document.getElementById("today-day-name").textContent = todayData.dayLabel;
     document.getElementById("today-formatted-date").textContent = `${todayData.dateLabel}, 2026`;
-    document.getElementById("today-skill-focus").textContent = todayData.focus;
+    document.getElementById("today-skill-focus").innerHTML = `<span style="margin-right:0.4rem;">${getSkillEmoji(todayData.focus)}</span> ${todayData.focus}`;
 }
 
 // Helper: Format Date object to YYYY-MM-DD
@@ -737,7 +752,7 @@ function renderCalendarGrid() {
         card.innerHTML = `
             <div>
                 <div class="card-header-date">${day.dateLabel} • ${day.dayLabel}</div>
-                <h3 class="card-header-title">${day.focus}</h3>
+                <h3 class="card-header-title"><span style="margin-right:0.3rem;">${getSkillEmoji(day.focus)}</span>${day.focus}</h3>
             </div>
             <div class="card-session-divider"></div>
             <div class="card-sessions">
