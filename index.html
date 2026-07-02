@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A premium interactive study planner and task tracker for the IELTS Intensive Study Schedule (July 2 - August 10, 2026). Tracking mock tests, study streaks, and daily study blueprints.">
+    <meta name="description" content="A premium interactive study planner and task tracker for the IELTS Intensive Study Schedule (July 2 - August 10, 2026). Tracking mock tests, study streaks, and daily tasks.">
     <title>IELTS Prep Schedule & Study Companion</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -13,7 +13,7 @@
         <header>
             <div class="brand">
                 <h1>IELTS Intensive Prep</h1>
-                <p>July 2 – August 10 • Daily Blueprint & Tracker</p>
+                <p>July 2 – August 10 • Daily To-Do List & Tracker</p>
             </div>
             
             <div class="countdown-container">
@@ -29,7 +29,7 @@
             <!-- Left Side: Today's Plan & Study Actions -->
             <section class="card today-card">
                 <div class="card-title">
-                    <span>Today's Blueprint</span>
+                    <span>Today's Tasks</span>
                     <span class="badge" id="today-day-name">Thursday</span>
                 </div>
                 
@@ -47,7 +47,7 @@
                             </div>
                         </div>
                         <div class="session-content">
-                            <div class="session-label">Session 1</div>
+                            <div class="session-label">Task 1</div>
                             <div class="session-desc">Outline 3 different essay types (Opinion, Discussion, Problem/Solution). Limit to 5 mins each.</div>
                         </div>
                     </div>
@@ -57,11 +57,11 @@
                 <div class="timer-widget">
                     <div class="timer-left">
                         <div class="timer-display" id="timerDisplay">40:00</div>
-                        <div class="timer-desc" id="timerTaskName">Session Mode</div>
+                        <div class="timer-desc" id="timerTaskName">Writing Task 2 (40m)</div>
                         <div class="timer-presets">
-                            <button class="btn btn-preset active" data-time="2400" onclick="setTimerPreset(2400, this, 'Task 2 Essay')">40m</button>
-                            <button class="btn btn-preset" data-time="1200" onclick="setTimerPreset(1200, this, 'Task 1 Graph')">20m</button>
-                            <button class="btn btn-preset" data-time="300" onclick="setTimerPreset(300, this, 'Outline Drills')">5m</button>
+                            <button class="btn btn-preset active" data-time="2400" onclick="setTimerPreset(2400, this, 'Writing Task 2 (40m)')">40m</button>
+                            <button class="btn btn-preset" data-time="1200" onclick="setTimerPreset(1200, this, 'Writing Task 1 (20m)')">20m</button>
+                            <button class="btn btn-preset" data-time="300" onclick="setTimerPreset(300, this, 'Outline Practice (5m)')">5m</button>
                         </div>
                     </div>
                     
@@ -110,7 +110,7 @@
                         </div>
                         <div class="mini-stat">
                             <span class="mini-stat-num" id="statCompletedSessions">0</span>
-                            <span class="mini-stat-label">Sessions Done</span>
+                            <span class="mini-stat-label">Completed Tasks</span>
                         </div>
                     </div>
                 </div>

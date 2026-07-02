@@ -488,7 +488,7 @@ document.addEventListener("DOMContentLoaded", () => {
         currentSelectedWeek = todayData.week;
     }
     switchWeek(currentSelectedWeek);
-    renderTodayBlueprint();
+    renderTodayTasks();
     updateStatsDashboard();
     
     // Auto-update countdown every minute
@@ -564,8 +564,8 @@ function formatDateKey(dateObj) {
     return `${y}-${m}-${d}`;
 }
 
-// Render "Today's Blueprint" items
-function renderTodayBlueprint() {
+// Render "Today's Tasks" items
+function renderTodayTasks() {
     const container = document.getElementById("today-sessions");
     if (!container || !todayData) return;
     
@@ -586,7 +586,7 @@ function renderTodayBlueprint() {
                 </div>
             </div>
             <div class="session-content">
-                <div class="session-label">Session ${index + 1}</div>
+                <div class="session-label">Task ${index + 1}</div>
                 <div class="session-desc">${session}</div>
             </div>
         `;
@@ -782,7 +782,7 @@ function toggleTimer() {
                 clearInterval(timerInterval);
                 timerRunning = false;
                 playAlarmSound();
-                alert("Session completed! Take a break.");
+                alert("Time is up! Take a break.");
                 resetTimer();
             }
         }, 1000);
